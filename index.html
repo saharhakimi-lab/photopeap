@@ -3,54 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מדריך משימות אינטראקטיבי ללימוד Photopea</title>
+    <title>אקדמיית PHOTOPEA של האחוואנים - מסיכות, מעברי צבע ושכבות</title>
     <!-- Tailwind CSS for modern and clean UI -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for Hebrew support -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Assistant & Heebo -->
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Heebo', sans-serif;
+            font-family: 'Assistant', 'Heebo', sans-serif;
+            background-color: #FAF7F0;
         }
+        .cream-bg { background-color: #FAF7F0; }
+        .card-shadow { box-shadow: 0 4px 20px -2px rgba(139, 92, 26, 0.08); }
+        
         .step-checkbox:checked + span {
             text-decoration: line-through;
             color: #9ca3af;
         }
-        .rainbow-bar {
-            height: 6px;
-            background: linear-gradient(90deg, #f472b6, #fb923c, #facc15, #4ade80, #38bdf8, #818cf8, #c084fc);
-            background-size: 300% 100%;
-            animation: rainbow-move 6s linear infinite;
-        }
-        @keyframes rainbow-move {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
-        .blob {
-            position: absolute;
-            border-radius: 9999px;
-            filter: blur(40px);
-            opacity: 0.35;
-            z-index: 0;
-        }
-        @keyframes float-slow {
-            0%, 100% { transform: translateY(0px) translateX(0px); }
-            50% { transform: translateY(-20px) translateX(15px); }
-        }
-        .float-anim { animation: float-slow 8s ease-in-out infinite; }
     </style>
 </head>
-<body class="bg-gradient-to-br from-teal-50 via-cyan-50 to-purple-50 text-slate-800 min-h-screen relative overflow-x-hidden">
+<body class="cream-bg text-stone-800 min-h-screen pb-12 transition-all duration-300">
 
-    <!-- Decorative floating color blobs -->
-    <div class="blob float-anim" style="width:300px; height:300px; background:#2dd4bf; top:80px; right:-100px;"></div>
-    <div class="blob float-anim" style="width:250px; height:250px; background:#f472b6; top:600px; left:-80px; animation-delay:2s;"></div>
-    <div class="blob float-anim" style="width:220px; height:220px; background:#facc15; top:1200px; right:-60px; animation-delay:4s;"></div>
-    <div class="blob float-anim" style="width:260px; height:260px; background:#818cf8; bottom:100px; left:20px; animation-delay:1s;"></div>
-
-    <!-- כפתור צף משולב: החלונית הסגולה + תמונת הפרופיל של טוביה מעליה -->
+    <!-- 🌟 כפתור צף משולב: החלונית הסגולה + תמונת הפרופיל של טוביה מעליה 🌟 -->
     <a href="https://gemini.google.com/gem/b5ce5f617ce4" target="_blank" rel="noopener noreferrer"
        style="z-index: 999999 !important;"
        class="group fixed bottom-6 left-6 inline-flex items-center justify-center p-0.5 overflow-visible text-sm font-bold text-stone-900 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 hover:text-white transition-all duration-300 shadow-2xl transform hover:scale-105">
@@ -72,391 +46,396 @@
     </a>
 
     <!-- Header Section -->
-    <header class="bg-gradient-to-r from-teal-600 via-cyan-600 to-purple-500 text-white shadow-md relative z-10">
-        <div class="rainbow-bar"></div>
-        <div class="max-w-6xl mx-auto px-6 py-8 text-center md:text-right flex flex-col md:flex-row justify-between items-center gap-4">
-            <div>
-                <h1 class="text-3xl md:text-4xl font-black mb-2">צעדים ראשונים ב-Photopea</h1>
-                <p class="text-lg text-teal-100 font-light">מסלול משימות אינטראקטיבי המשלב מסיכות, מעברי צבע ושכבות</p>
+    <header class="bg-white border-b border-teal-100 shadow-xs sticky top-0 z-40 backdrop-blur-md bg-white/90">
+        <div class="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            <!-- לוגו וכותרת -->
+            <div class="flex items-center gap-3">
+                <!-- לוגו PHOTOPEA המודרני מהקישור המעודכן -->
+                <div class="w-12 h-12 bg-teal-600 rounded-2xl p-2 shadow-md rotate-[-2deg] flex items-center justify-center shrink-0">
+                    <img src="https://lh3.googleusercontent.com/d/1aEFuxVxdTLtWbz0aaDm87pLjURfguskg" alt="Photopea Logo" class="w-full h-full object-contain filter brightness-0 invert">
+                </div>
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-black text-stone-900 leading-tight">צעדים ראשונים ב-Photopea 📸</h1>
+                    <p class="text-xs sm:text-sm text-stone-500 font-medium">מסלול משימות אינטראקטיבי המשלב מסיכות, מעברי צבע ושכבות 🚀</p>
+                </div>
             </div>
-            <a href="https://www.photopea.com" target="_blank" class="bg-white text-teal-600 hover:bg-teal-50 font-bold px-6 py-3 rounded-full shadow-lg transition duration-300 transform hover:scale-105 inline-flex items-center gap-2">
-                <span>לפתיחת Photopea לחצו כאן</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+
+            <!-- קישור ל-Photopea -->
+            <a href="https://www.photopea.com" target="_blank" rel="noopener"
+               class="bg-teal-600 hover:bg-teal-700 text-white font-black px-6 py-3 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2 text-sm">
+                <span>פתח את Photopea</span>
+                <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
             </a>
+
         </div>
     </header>
 
     <!-- Main Container -->
-    <main class="max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8 relative z-10">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
         
         <!-- Sidebar / Toolbox & Overview -->
-        <aside class="lg:col-span-1 space-y-6 relative z-10">
+        <aside class="lg:col-span-4 space-y-6">
             
             <!-- Quick Intro -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border-2 border-transparent bg-clip-padding relative" style="background-image: linear-gradient(white, white), linear-gradient(120deg, #2dd4bf, #38bdf8, #c084fc); background-origin: border-box; background-clip: padding-box, border-box;">
-                <h3 class="text-lg font-bold text-slate-900 mb-2">הסבר קצר לתלמיד</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">
+            <div class="bg-white rounded-3xl p-6 card-shadow border border-stone-100">
+                <h3 class="text-lg font-black text-stone-900 mb-2 flex items-center gap-2">
+                    <span>🧙‍♂️</span> הסבר קצר לתלמיד
+                </h3>
+                <p class="text-sm text-stone-600 font-semibold leading-relaxed">
                     ברוכים הבאים לעולם עריכת התמונות המקצועי! 
                     במדריך זה תלמדו להשתמש ב-<strong>Photopea</strong> - כלי עוצמתי לעריכה גרפית. 
-                    בצעו את השלבים, גלו את הסודות של מעצבים גדולים, וסמנו <span class="text-teal-600 font-bold">V</span> בתיבות כדי לעקוב אחר ההתקדמות שלכם!
+                    בצעו את השלבים, גלו את הסודות של מעצבים גדולים, וסמנו <span class="text-teal-600 font-black">V</span> בתיבות כדי לעקוב אחר ההתקדמות שלכם!
                 </p>
             </div>
 
             <!-- Photopea Tool Guide -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2 text-teal-600">
+            <div class="bg-white rounded-3xl p-6 card-shadow border border-stone-100">
+                <h3 class="text-lg font-black text-stone-900 mb-4 flex items-center gap-2 text-teal-600">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
                     </svg>
                     קיצורי דרך סופר-חשובים
                 </h3>
-                <ul class="space-y-3 text-sm text-slate-600">
-                    <li class="flex justify-between border-b pb-1">
-                        <span class="font-bold text-slate-800">V</span>
+                <ul class="space-y-3 text-sm text-stone-600 font-semibold">
+                    <li class="flex justify-between border-b border-stone-100 pb-2">
+                        <span class="font-black text-stone-900 bg-amber-100 px-2 py-0.5 rounded-lg">V</span>
                         <span>כלי ההזזה (Move Tool)</span>
                     </li>
-                    <li class="flex justify-between border-b pb-1">
-                        <span class="font-bold text-slate-800">G</span>
+                    <li class="flex justify-between border-b border-stone-100 pb-2">
+                        <span class="font-black text-stone-900 bg-amber-100 px-2 py-0.5 rounded-lg">G</span>
                         <span>מעבר צבע / דלי (Gradient)</span>
                     </li>
-                    <li class="flex justify-between border-b pb-1">
-                        <span class="font-bold text-slate-800">B</span>
+                    <li class="flex justify-between border-b border-stone-100 pb-2">
+                        <span class="font-black text-stone-900 bg-amber-100 px-2 py-0.5 rounded-lg">B</span>
                         <span>כלי המברשת (Brush Tool)</span>
                     </li>
-                    <li class="flex justify-between border-b pb-1">
-                        <span class="font-bold text-slate-800">Ctrl + J</span>
+                    <li class="flex justify-between border-b border-stone-100 pb-2">
+                        <span class="font-black text-stone-900 bg-amber-100 px-2 py-0.5 rounded-lg">Ctrl + J</span>
                         <span>שכפול השכבה המסומנת</span>
                     </li>
-                    <li class="flex justify-between border-b pb-1">
-                        <span class="font-bold text-slate-800">Ctrl + Alt + T</span>
+                    <li class="flex justify-between border-b border-stone-100 pb-2">
+                        <span class="font-black text-stone-900 bg-amber-100 px-2 py-0.5 rounded-lg">Ctrl + Alt + T</span>
                         <span>שינוי גודל חופשי (Transform)</span>
                     </li>
-                    <li class="flex justify-between border-b pb-1">
-                        <span class="font-bold text-slate-800">Ctrl + Z</span>
+                    <li class="flex justify-between border-b border-stone-100 pb-2">
+                        <span class="font-black text-stone-900 bg-amber-100 px-2 py-0.5 rounded-lg">Ctrl + Z</span>
                         <span>צעד אחד אחורה (ביטול)</span>
                     </li>
                 </ul>
             </div>
 
             <!-- Progress Card -->
-            <div class="bg-gradient-to-br from-teal-100 via-cyan-100 to-purple-100 p-6 rounded-2xl border border-teal-200 text-center shadow-sm">
-                <h3 class="text-sm font-bold text-teal-900 uppercase tracking-wider mb-2">מד התקדמות ב-Photopea</h3>
-                <div class="relative pt-1">
+            <div class="bg-teal-50/70 p-6 rounded-3xl border border-teal-100 card-shadow text-center">
+                <h3 class="text-sm font-black text-teal-900 uppercase tracking-wider mb-3">מד התקדמות ב-Photopea ⚡</h3>
+                <div class="relative pt-1 mb-2">
                     <div class="flex mb-2 items-center justify-between">
                         <div>
-                            <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-600 bg-teal-200" id="progress-badge">
+                            <span class="text-xs font-black inline-block py-1 px-3 uppercase rounded-full text-teal-700 bg-teal-200" id="progress-badge">
                                 0% הושלם
                             </span>
                         </div>
                     </div>
-                    <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-teal-200">
+                    <div class="overflow-hidden h-3 mb-2 text-xs flex rounded-full bg-stone-200">
                         <div id="progress-bar" style="width: 0%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-600 transition-all duration-500"></div>
                     </div>
                 </div>
-                <button onclick="resetAll()" class="text-xs text-teal-600 hover:text-teal-800 underline font-medium focus:outline-none">איפוס כל המשימות</button>
+                <button onclick="resetAll()" class="text-xs text-teal-700 hover:text-teal-900 underline font-extrabold focus:outline-none transition-colors">איפוס כל המשימות</button>
             </div>
         </aside>
 
         <!-- Tasks Content Area -->
-        <section class="lg:col-span-3 space-y-8 relative z-10">
+        <section class="lg:col-span-8 space-y-8">
             
             <!-- TASK 1 -->
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden task-card" id="task1">
-                <div class="p-6 bg-amber-50 border-b border-amber-100 flex justify-between items-center">
+            <div class="bg-white rounded-3xl card-shadow border border-stone-100 overflow-hidden transition-all" id="task1">
+                <div class="p-6 bg-amber-50/60 border-b border-amber-100 flex justify-between items-center">
                     <div class="flex items-center gap-3">
-                        <span class="bg-amber-500 text-white font-black text-lg w-8 h-8 rounded-full flex items-center justify-center">1</span>
+                        <span class="bg-amber-500 text-white font-black text-lg w-9 h-9 rounded-2xl flex items-center justify-center shadow-xs">1</span>
                         <div>
-                            <h2 class="text-xl font-bold text-slate-900">משימה 1: מיזוג תמונות קסום בעזרת מסיכה (Layer Mask)</h2>
-                            <p class="text-sm text-slate-500">נושא מרכזי: מסיכות מברשת | זמן משוער: 20 דקות</p>
+                            <h2 class="text-xl font-black text-stone-900">משימה 1: מיזוג תמונות קסום בעזרת מסיכה (Layer Mask)</h2>
+                            <p class="text-xs sm:text-sm text-stone-500 font-semibold">נושא מרכזי: מסיכות מברשת | זמן משוער: 20 דקות</p>
                         </div>
                     </div>
-                    <span class="text-xs font-semibold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">משימת יסוד</span>
+                    <span class="text-xs font-black bg-amber-100 text-amber-900 px-3 py-1.5 rounded-xl">משימת יסוד</span>
                 </div>
                 
                 <div class="p-6 space-y-6">
-                    <p class="text-slate-600 leading-relaxed">
+                    <p class="text-stone-700 font-semibold leading-relaxed">
                         במשימה זו נלמד את אחד הכלים החשובים ביותר בפוטושופ ו-Photopea: <strong>מסיכת שכבה (Layer Mask)</strong>. מסיכה מאפשרת לנו להעלים חלקים משכבה מסוימת בלי למחוק אותם באמת, כדי ליצור שילוב מרהיב ורך בין שתי תמונות שונות (כמו דמות שמתמזגת לתוך יער או עיר בלילה).
                     </p>
 
                     <!-- Steps List -->
-                    <div class="space-y-4">
-                        <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide border-b pb-2">שלבי המשימה:</h4>
+                    <div class="space-y-3">
+                        <h4 class="font-black text-stone-900 text-sm uppercase tracking-wide border-b border-stone-100 pb-2">שלבי המשימה:</h4>
                         
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
-                                <strong>צעד 1:</strong> היכנסו לאתר <a href="https://www.photopea.com" target="_blank" class="text-teal-600 underline font-medium">Photopea.com</a>, לחצו על <strong>New Project</strong> וצרו פרויקט בגודל ריבוע רגיל (למשל 1000x1000 פיקסלים).
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
+                                <strong>צעד 1:</strong> היכנסו לאתר <a href="https://www.photopea.com" target="_blank" class="text-teal-600 underline font-black">Photopea.com</a>, לחצו על <strong>New Project</strong> וצרו פרויקט בגודל ריבוע רגיל (למשל 1000x1000 פיקסלים).
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 2:</strong> פתחו שתי תמונות מהמחשב שלכם או גררו מהאינטרנט: תמונה אחת של <strong>פורטרט/אדם</strong>, ותמונה שנייה של <strong>נוף/טבע/עיר</strong>. ודאו שהנוף נמצא בשכבה העליונה מעל האדם בחלונית השכבות (Layers) מצד ימין.
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 3:</strong> בחרו את שכבת הנוף העליונה. כעת, לחצו על כפתור <strong>Add Raster Mask</strong> בתחתית חלונית השכבות (הכפתור נראה כמו מלבן עם עיגול כהה באמצע). שימו לב שנוסף מלבן לבן קטן לצד תמונת הנוף שלכם.
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
-                                <strong>צעד 4:</strong> לחצו על המלבן הלבן החדש שנוצר (זו המסיכה!). כעת, עברו למקלדת ולחצו על האות <kbd class="px-2 py-1 bg-slate-100 border rounded text-xs">B</kbd> כדי לבחור ב<strong>מברשת (Brush Tool)</strong>.
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
+                                <strong>צעד 4:</strong> לחצו על המלבן הלבן החדש שנוצר (זו המסיכה!). כעת, עברו למקלדת ולחצו על האות <kbd class="px-2 py-0.5 bg-stone-100 border border-stone-300 rounded-md text-xs font-black">B</kbd> כדי לבחור ב<strong>מברשת (Brush Tool)</strong>.
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
-                                <strong>צעד 5:</strong> ודאו שצבע החזית שלכם מוגדר כ<strong>שחור</strong> (ניתן ללחוץ על <kbd class="px-2 py-1 bg-slate-100 border rounded text-xs">D</kbd> ואז <kbd class="px-2 py-1 bg-slate-100 border rounded text-xs">X</kbd> לאיפוס והחלפת צבעים). הגדירו למברשת שלכם קצוות רכים (Hardness: 0%) בחלונית העליונה.
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
+                                <strong>צעד 5:</strong> ודאו שצבע החזית שלכם מוגדר כ<strong>שחור</strong> (ניתן ללחוץ על <kbd class="px-2 py-0.5 bg-stone-100 border border-stone-300 rounded-md text-xs font-black">D</kbd> ואז <kbd class="px-2 py-0.5 bg-stone-100 border border-stone-300 rounded-md text-xs font-black">X</kbd> לאיפוס והחלפת צבעים). הגדירו למברשת שלכם קצוות רכים (Hardness: 0%) בחלונית העליונה.
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 6:</strong> צבעו בעדינות עם המברשת השחורה על גבי המסיכה. תראו שחלקים מתמונת הנוף נעלמים וחושפים את הפורטרט שמתחתיה ברכות! (אם מחקתם יותר מדי, שנו את צבע המברשת ללבן וצבעו שוב כדי להחזיר).
                             </span>
                         </label>
                     </div>
 
                     <!-- Visual Tip -->
-                    <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 text-amber-900 text-xs flex gap-2 items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span><strong>כלל ברזל במסיכות:</strong> <span class="font-bold">שחור מסתיר, לבן מגלה!</span> צביעה בשחור מעלימה חלקים מהשכבה, וצביעה בלבן מחזירה אותם לקנבס.</span>
+                    <div class="bg-[#FAF7F0] p-4 rounded-2xl border-l-4 border-amber-500 text-stone-800 text-xs font-bold leading-relaxed flex gap-3 items-center">
+                        <span class="text-2xl">💡</span>
+                        <span><strong>כלל ברזל במסיכות:</strong> <span class="text-amber-900 font-black">שחור מסתיר, לבן מגלה!</span> צביעה בשחור מעלימה חלקים מהשכבה, וצביעה בלבן מחזירה אותם לקנבס.</span>
                     </div>
                 </div>
             </div>
 
             <!-- TASK 2 -->
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden task-card" id="task2">
-                <div class="p-6 bg-emerald-50 border-b border-emerald-100 flex justify-between items-center">
+            <div class="bg-white rounded-3xl card-shadow border border-stone-100 overflow-hidden transition-all" id="task2">
+                <div class="p-6 bg-emerald-50/60 border-b border-emerald-100 flex justify-between items-center">
                     <div class="flex items-center gap-3">
-                        <span class="bg-emerald-500 text-white font-black text-lg w-8 h-8 rounded-full flex items-center justify-center">2</span>
+                        <span class="bg-emerald-500 text-white font-black text-lg w-9 h-9 rounded-2xl flex items-center justify-center shadow-xs">2</span>
                         <div>
-                            <h2 class="text-xl font-bold text-slate-900">משימה 2: פוסטר רטרו בעזרת כלי מעבר הצבעים (Gradient)</h2>
-                            <p class="text-sm text-slate-500">נושא מרכזי: Gradient Tool | זמן משוער: 15 דקות</p>
+                            <h2 class="text-xl font-black text-stone-900">משימה 2: פוסטר רטרו בעזרת כלי מעבר הצבעים (Gradient)</h2>
+                            <p class="text-xs sm:text-sm text-stone-500 font-semibold">נושא מרכזי: Gradient Tool | זמן משוער: 15 דקות</p>
                         </div>
                     </div>
-                    <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">משימת אפקטים</span>
+                    <span class="text-xs font-black bg-emerald-100 text-emerald-900 px-3 py-1.5 rounded-xl">משימת אפקטים</span>
                 </div>
                 
                 <div class="p-6 space-y-6">
-                    <p class="text-slate-600 leading-relaxed">
+                    <p class="text-stone-700 font-semibold leading-relaxed">
                         במשימה הזו ניצור פוסטר ססגוני ומקצועי בסגנון שנות ה-80. נלמד להשתמש ב<strong>כלי מעבר הצבעים (Gradient Tool)</strong> כדי לייצר רקעים וצורות עם עומק ויזואלי מהפנט.
                     </p>
 
                     <!-- Steps List -->
-                    <div class="space-y-4">
-                        <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide border-b pb-2">שלבי המשימה:</h4>
+                    <div class="space-y-3">
+                        <h4 class="font-black text-stone-900 text-sm uppercase tracking-wide border-b border-stone-100 pb-2">שלבי המשימה:</h4>
                         
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 1:</strong> פתחו קנבס חדש בצורת פוסטר לאורך (רוחב 800 פיקסלים וגובה 1200 פיקסלים).
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
-                                <strong>צעד 2:</strong> בחרו ב<strong>כלי מעבר הצבעים (Gradient)</strong> בסרגל הכלים השמאלי (או לחצו על האות <kbd class="px-2 py-1 bg-slate-100 border rounded text-xs">G</kbd> במקלדת).
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
+                                <strong>צעד 2:</strong> בחרו ב<strong>כלי מעבר הצבעים (Gradient)</strong> בסרגל הכלים השמאלי (או לחצו על האות <kbd class="px-2 py-0.5 bg-stone-100 border border-stone-300 rounded-md text-xs font-black">G</kbd> במקלדת).
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 3:</strong> לחצו על תיבת מעבר הצבע שמופיעה בראש המסך למעלה כדי לפתוח את ה-Gradient Editor. בחרו בגרדיאנט צבעוני עם כמה גוונים עזים (למשל: סגול-ורוד-צהוב).
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 4:</strong> מתחו קו לאורך הדף מלמעלה למטה כדי להחיל את הרקע המרהיב.
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 5:</strong> צרו שכבה חדשה (Layer -> New Layer), וציירו עיגול גדול במרכז בעזרת כלי בחירת האליפסה. הפעם השתמשו בגרדיאנט *מעגלי* (Radial Gradient) בצבעים מנוגדים (כמו כחול וירוק) בתוך העיגול כדי ליצור שמש עתידנית.
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 6:</strong> הוסיפו כיתוב מעוצב וגדול (למשל: "RETRO") בפינה העליונה בעזרת כלי הטקסט, ושנו את שיטת השילוב (Blend Mode) של שכבת הטקסט בחלונית השכבות מ-"Normal" ל-"Overlay".
                             </span>
                         </label>
                     </div>
 
                     <!-- Visual Tip -->
-                    <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-200 text-emerald-900 text-xs flex gap-2 items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                    <div class="bg-[#FAF7F0] p-4 rounded-2xl border-l-4 border-emerald-500 text-stone-800 text-xs font-bold leading-relaxed flex gap-3 items-center">
+                        <span class="text-2xl">💡</span>
                         <span><strong>טיפ עיצובי:</strong> נסו למתוח קווים באורכים שונים ובזוויות שונות בעזרת כלי הגרדיאנט. קו קצר ייצר מעבר צבע חד ומהיר, וקו ארוך ייצר מעבר חלק ורך.</span>
                     </div>
                 </div>
             </div>
 
             <!-- TASK 3 -->
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden task-card" id="task3">
-                <div class="p-6 bg-blue-50 border-b border-blue-100 flex justify-between items-center">
+            <div class="bg-white rounded-3xl card-shadow border border-stone-100 overflow-hidden transition-all" id="task3">
+                <div class="p-6 bg-blue-50/60 border-b border-blue-100 flex justify-between items-center">
                     <div class="flex items-center gap-3">
-                        <span class="bg-blue-500 text-white font-black text-lg w-8 h-8 rounded-full flex items-center justify-center">3</span>
+                        <span class="bg-blue-500 text-white font-black text-lg w-9 h-9 rounded-2xl flex items-center justify-center shadow-xs">3</span>
                         <div>
-                            <h2 class="text-xl font-bold text-slate-900">משימה 3: טקסט שיוצא מתוך תמונה (Layer Pop-Out)</h2>
-                            <p class="text-sm text-slate-500">נושא מרכזי: סדר שכבות ומסיכה | זמן משוער: 25 דקות</p>
+                            <h2 class="text-xl font-black text-stone-900">משימה 3: טקסט שיוצא מתוך תמונה (Layer Pop-Out)</h2>
+                            <p class="text-xs sm:text-sm text-stone-500 font-semibold">נושא מרכזי: סדר שכבות ומסיכה | זמן משוער: 25 דקות</p>
                         </div>
                     </div>
-                    <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">אפקט תלת-מימדי</span>
+                    <span class="text-xs font-black bg-blue-100 text-blue-900 px-3 py-1.5 rounded-xl">אפקט תלת-מימדי</span>
                 </div>
                 
                 <div class="p-6 space-y-6">
-                    <p class="text-slate-600 leading-relaxed">
+                    <p class="text-stone-700 font-semibold leading-relaxed">
                         במשימה הזו ניצור אשליה אופטית מדהימה שבה נראה שחלק מתמונה (למשל, ראש של דינוזאור, כדורגל או יד מושטת) פורץ ויוצא החוצה מתוך שכבת הטקסט שנמצאת מאחוריו.
                     </p>
 
                     <!-- Steps List -->
-                    <div class="space-y-4">
-                        <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide border-b pb-2">שלבי המשימה:</h4>
+                    <div class="space-y-3">
+                        <h4 class="font-black text-stone-900 text-sm uppercase tracking-wide border-b border-stone-100 pb-2">שלבי המשימה:</h4>
                         
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 1:</strong> פתחו קנבס חדש והביאו תמונה של אלמנט בולט עם רקע חלק או מבודד (למשל ספורטאי רץ, חיה בטבע או בניין גבוה).
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
-                                <strong>צעד 2:</strong> שכפלו את שכבת התמונה על ידי לחיצה על <kbd class="px-2 py-1 bg-slate-100 border rounded text-xs">Ctrl + J</kbd>. כעת יש לכם שתי שכבות זהות בדיוק.
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
+                                <strong>צעד 2:</strong> שכפלו את שכבת התמונה על ידי לחיצה על <kbd class="px-2 py-0.5 bg-stone-100 border border-stone-300 rounded-md text-xs font-black">Ctrl + J</kbd>. כעת יש לכם שתי שכבות זהות בדיוק.
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 3:</strong> צרו שכבת טקסט חדשה, רשמו מילה אחת גדולה ובולטת מאוד (בגופן עבה) ומקמו אותה *באמצע* - בין שתי שכבות התמונות שיצרתם.
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 4:</strong> בחרו את שכבת התמונה העליונה (שנמצאת מעל הטקסט) והוסיפו לה מסיכת שכבה לבנה (כמו שלמדנו במשימה 1).
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 5:</strong> כעת נצבע את המסיכה בשחור כדי להסתיר את רוב התמונה העליונה (כדי שנראה את הטקסט), למעט החלק המרכזי שאותו אנחנו רוצים להוציא קדימה מעל הטקסט (למשל רק הראש של הדמות).
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 6:</strong> התוצאה: חלק מהגוף של הדמות יהיה מאחורי הטקסט, וחלק אחר (כמו הראש) ייפרץ קדימה מעל הטקסט. שילוב מדהים!
                             </span>
                         </label>
                     </div>
 
                     <!-- Visual Tip -->
-                    <div class="bg-blue-50 p-4 rounded-xl border border-blue-200 text-blue-900 text-xs flex gap-2 items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span><strong>קיצור דרך חשוב:</strong> תוכלו לשנות במהירות את גודל המברשת בזמן הציור על המסיכה בעזרת מקשי הסוגריים המרובעים במקלדת: <kbd class="px-1 bg-white border rounded text-xs">[</kbd> להקטנה ו-<kbd class="px-1 bg-white border rounded text-xs">]</kbd> להגדלה.</span>
+                    <div class="bg-[#FAF7F0] p-4 rounded-2xl border-l-4 border-blue-500 text-stone-800 text-xs font-bold leading-relaxed flex gap-3 items-center">
+                        <span class="text-2xl">💡</span>
+                        <span><strong>קיצור דרך חשוב:</strong> תוכלו לשנות במהירות את גודל המברשת בזמן הציור על המסיכה בעזרת מקשי הסוגריים המרובעים במקלדת: <kbd class="px-1.5 py-0.5 bg-white border border-stone-300 rounded text-xs font-black">[</kbd> להקטנה ו-<kbd class="px-1.5 py-0.5 bg-white border border-stone-300 rounded text-xs font-black">]</kbd> להגדלה.</span>
                     </div>
                 </div>
             </div>
 
             <!-- TASK 4: CHALLENGE -->
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden task-card" id="task4">
-                <div class="p-6 bg-purple-50 border-b border-purple-100 flex justify-between items-center">
+            <div class="bg-white rounded-3xl card-shadow border border-stone-100 overflow-hidden transition-all" id="task4">
+                <div class="p-6 bg-teal-50/60 border-b border-teal-100 flex justify-between items-center">
                     <div class="flex items-center gap-3">
-                        <span class="bg-purple-500 text-white font-black text-lg w-8 h-8 rounded-full flex items-center justify-center">★</span>
+                        <span class="bg-teal-600 text-white font-black text-lg w-9 h-9 rounded-2xl flex items-center justify-center shadow-xs">★</span>
                         <div>
-                            <h2 class="text-xl font-bold text-slate-900">משימת אתגר: עיצוב פופ-ארט בסגנון אנדי וורהול</h2>
-                            <p class="text-sm text-slate-500">נושא מרכזי: Adjustments & Layers | זמן משוער: 30 דקות</p>
+                            <h2 class="text-xl font-black text-stone-900">משימת אתגר: עיצוב פופ-ארט בסגנון אנדי וורהול</h2>
+                            <p class="text-xs sm:text-sm text-stone-500 font-semibold">נושא מרכזי: Adjustments & Layers | זמן משוער: 30 דקות</p>
                         </div>
                     </div>
-                    <span class="text-xs font-semibold bg-purple-100 text-purple-800 px-3 py-1 rounded-full">אתגר מסכם</span>
+                    <span class="text-xs font-black bg-teal-100 text-teal-900 px-3 py-1.5 rounded-xl">אתגר מסכם</span>
                 </div>
                 
                 <div class="p-6 space-y-6">
-                    <p class="text-slate-600 leading-relaxed">
+                    <p class="text-stone-700 font-semibold leading-relaxed">
                         ניקח תמונה רגילה של חפץ פשוט או פורטרט עצמי ונהפוך אותה ליצירת אמנות קלאסית בסגנון "פופ-ארט" (משחק קונטרסטים חזק ושינויי צבעים קיצוניים).
                     </p>
 
                     <!-- Steps List -->
-                    <div class="space-y-4">
-                        <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide border-b pb-2">שלבי המשימה:</h4>
+                    <div class="space-y-3">
+                        <h4 class="font-black text-stone-900 text-sm uppercase tracking-wide border-b border-stone-100 pb-2">שלבי המשימה:</h4>
                         
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 1:</strong> פתחו קנבס חדש והביאו תמונה של פורטרט אישי שלכם, או חפץ ברור כמו בננה או פחית.
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 2:</strong> הסירו את הרקע המקורי. ניתן לעשות זאת בקלות ב-Photopea על ידי בחירת התמונה, מעבר לתפריט העליון: <strong>Select -> Remove BG</strong>.
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 3:</strong> נהפוך את התמונה לשחור-לבן בעל ניגודיות גבוהה. לכו לתפריט: <strong>Image -> Adjustments -> Threshold</strong>. שחקו עם הסמן עד שתקבלו דמות נקייה שמורכבת מצבע שחור ולבן בלבד.
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 4:</strong> שנו את שיטת השילוב (Blend Mode) של השכבה השחורה-לבנה הזו ל-<strong>Multiply</strong>. זה יגרום לחלקים הלבנים להפוך לשקופים!
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 5:</strong> צרו שכבה ריקה חדשה ומקמו אותה *מתחת* לשכבת ה-Threshold. כעת, צבעו בה בצבעים פסיכדליים חזקים (ורוד, צהוב זרחני, כחול שמיים) בעזרת מברשת או גרדיאנט. ראו איך הצבעים ממלאים את האזורים השקופים!
                             </span>
                         </label>
 
-                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
-                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
-                            <span class="text-slate-700 text-sm">
+                        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-teal-50/40 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-teal-600 focus:ring-teal-500" onchange="updateProgress()">
+                            <span class="text-stone-700 text-sm font-bold leading-relaxed">
                                 <strong>צעד 6:</strong> שמרו וייצאו את הקובץ הסופי שלכם בפורמט JPEG דרך תפריט <strong>File -> Export As -> JPG</strong>. העלו אותו כדי להשוויץ בקבוצה של הכיתה!
                             </span>
                         </label>
                     </div>
 
                     <!-- Visual Tip -->
-                    <div class="bg-purple-50 p-4 rounded-xl border border-purple-200 text-purple-900 text-xs flex gap-2 items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                    <div class="bg-[#FAF7F0] p-4 rounded-2xl border-l-4 border-teal-500 text-stone-800 text-xs font-bold leading-relaxed flex gap-3 items-center">
+                        <span class="text-2xl">💡</span>
                         <span><strong>רעיון לשדרוג:</strong> ניתן לשכפל את היצירה שיצרתם 4 פעמים, למקם אותן בריבוע (2x2) ולתת לכל ריבוע שילוב צבעים שונה לחלוטין לקבלת אפקט אנדי וורהול מושלם.</span>
                     </div>
                 </div>
@@ -466,11 +445,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 mt-16 border-t border-slate-800 relative z-10">
-        <div class="max-w-6xl mx-auto px-6 text-center space-y-4">
-            <p class="text-sm">מדריך משימות זה נבנה במיוחד עבור מורים ותלמידים העושים את צעדיהם הראשונים בעולם עריכת התמונה המקצועית.</p>
-            <p class="text-xs text-slate-500">&copy; 2026 כל הזכויות שמורות. מוגש באהבה לקהילת החינוך הטכנולוגי.</p>
-        </div>
+    <footer class="text-center mt-12 pt-6 border-t border-stone-200 text-xs text-stone-500 font-medium">
+        <p>© 2026 אקדמיית PHOTOPEA של האחוואנים. כל הזכויות שמורות למעצבי העל.</p>
+        <p class="mt-1 text-teal-600 font-bold">״בסוף הכל זה מסיכות, שכבות וקצת צבע, יא אלוף!״</p>
     </footer>
 
     <!-- Interactive Logic (JavaScript) -->
@@ -498,14 +475,14 @@
 
             // Change colors of badge based on progress
             if (percentage === 100) {
-                progressBadge.className = "text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200 animate-bounce";
+                progressBadge.className = "text-xs font-black inline-block py-1 px-3 uppercase rounded-full text-emerald-800 bg-emerald-200 animate-bounce";
                 progressBadge.innerText = "אלופי הפוטושופ! סיימתם הכל! 🎉";
-                progressBar.className = "shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500 transition-all duration-500";
+                progressBar.className = "shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500 transition-all duration-500";
             } else if (percentage > 50) {
-                progressBadge.className = "text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-600 bg-teal-200";
-                progressBar.className = "shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-500 transition-all duration-500";
+                progressBadge.className = "text-xs font-black inline-block py-1 px-3 uppercase rounded-full text-teal-800 bg-teal-200";
+                progressBar.className = "shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-600 transition-all duration-500";
             } else {
-                progressBadge.className = "text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-600 bg-teal-200";
+                progressBadge.className = "text-xs font-black inline-block py-1 px-3 uppercase rounded-full text-teal-800 bg-teal-200";
                 progressBar.className = "shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-600 transition-all duration-500";
             }
 
