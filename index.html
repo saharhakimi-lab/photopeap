@@ -20,6 +20,15 @@
             text-decoration: line-through;
             color: #9ca3af;
         }
+
+        /* Continuous rotation animation for the crazy avatar */
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 12s linear infinite;
+        }
     </style>
 </head>
 <body class="cream-bg text-stone-800 min-h-screen pb-12 transition-all duration-300">
@@ -80,15 +89,21 @@
         <aside class="lg:col-span-4 space-y-6">
             
             <!-- Quick Intro -->
-            <div class="bg-white rounded-3xl p-6 card-shadow border border-stone-100">
-                <h3 class="text-lg font-black text-stone-900 mb-2 flex items-center gap-2">
-                    <span>🧙‍♂️</span> הסבר קצר לתלמיד
-                </h3>
-                <p class="text-sm text-stone-600 font-semibold leading-relaxed">
-                    ברוכים הבאים לעולם עריכת התמונות המקצועי! 
-                    במדריך זה תלמדו להשתמש ב-<strong>Photopea</strong> - כלי עוצמתי לעריכה גרפית. 
-                    בצעו את השלבים, גלו את הסודות של מעצבים גדולים, וסמנו <span class="text-teal-600 font-black">V</span> בתיבות כדי לעקוב אחר ההתקדמות שלכם!
-                </p>
+            <div class="bg-white rounded-3xl p-6 card-shadow border border-stone-100 flex items-start gap-4">
+                <!-- Crazy Rotating Avatar -->
+                <div class="w-16 h-16 shrink-0 rounded-full overflow-hidden shadow-lg border-2 border-teal-500 animate-spin-slow">
+                    <img src="https://lh3.googleusercontent.com/d/1rMyIl_h_33STiLZtmA4-tKc-6mN_I_45" alt="Crazy Rotating Avatar" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h3 class="text-lg font-black text-stone-900 mb-1">
+                        הסבר קצר לתלמיד
+                    </h3>
+                    <p class="text-sm text-stone-600 font-semibold leading-relaxed">
+                        ברוכים הבאים לעולם עריכת התמונות המקצועי! 
+                        במדריך זה תלמדו להשתמש ב-<strong>Photopea</strong> - כלי עוצמתי לעריכה גרפית. 
+                        בצעו את השלבים, גלו את הסודות של מעצבים גדולים, וסמנו <span class="text-teal-600 font-black">V</span> בתיבות כדי לעקוב אחר ההתקדמות שלכם!
+                    </p>
+                </div>
             </div>
 
             <!-- Photopea Tool Guide - Compact Light Card -->
@@ -149,19 +164,19 @@
         <!-- Tasks Content Area with Tabs -->
         <section class="lg:col-span-8 space-y-6">
             
-            <!-- Tab Navigation Buttons -->
+            <!-- Tab Navigation Buttons (Icons Removed) -->
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-white p-3 rounded-3xl card-shadow border border-stone-100">
                 <button onclick="switchTab(1)" id="tab-btn-1" class="tab-btn font-black text-sm py-3 px-4 rounded-2xl transition-all duration-200 bg-teal-600 text-white shadow-md">
-                    משימה 1 🎭
+                    משימה 1
                 </button>
                 <button onclick="switchTab(2)" id="tab-btn-2" class="tab-btn font-black text-sm py-3 px-4 rounded-2xl transition-all duration-200 bg-stone-100 text-stone-600 hover:bg-stone-200">
-                    משימה 2 🌅
+                    משימה 2
                 </button>
                 <button onclick="switchTab(3)" id="tab-btn-3" class="tab-btn font-black text-sm py-3 px-4 rounded-2xl transition-all duration-200 bg-stone-100 text-stone-600 hover:bg-stone-200">
-                    משימה 3 💡
+                    משימה 3
                 </button>
                 <button onclick="switchTab(4)" id="tab-btn-4" class="tab-btn font-black text-sm py-3 px-4 rounded-2xl transition-all duration-200 bg-stone-100 text-stone-600 hover:bg-stone-200">
-                    אתגר פופ-ארט ★
+                    אתגר פופ-ארט
                 </button>
             </div>
 
@@ -182,6 +197,51 @@
                     <p class="text-stone-700 font-semibold leading-relaxed">
                         במשימה זו נלמד את אחד הכלים החשובים ביותר בפוטושופ ו-Photopea: <strong>מסיכת שכבה (Layer Mask)</strong>. מסיכה מאפשרת לנו להעלים חלקים משכבה מסוימת בלי למחוק אותם באמת, כדי ליצור שילוב מרהיב ורך בין שתי תמונות שונות (כמו דמות שמתמזגת לתוך יער או עיר בלילה).
                     </p>
+
+                    <!-- Visual Output Target Card -->
+                    <div class="bg-amber-50/40 border-2 border-dashed border-amber-300 rounded-3xl p-5 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-black uppercase tracking-wider text-amber-800 bg-amber-200/80 px-3 py-1 rounded-full">🎯 ככה זה אמור להיראות בסוף!</span>
+                            <span class="text-xs font-semibold text-stone-500">תוצר מצופה - משימה 1</span>
+                        </div>
+                        <div class="relative rounded-2xl overflow-hidden bg-stone-900 h-64 flex items-center justify-center text-white shadow-inner group">
+                            <!-- SVG Visual Representation of Masking Effect -->
+                            <svg class="w-full h-full absolute inset-0" viewBox="0 0 500 300" preserveAspectRatio="xMidYMid slice">
+                                <defs>
+                                    <linearGradient id="forestGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#064e3b" />
+                                        <stop offset="100%" stop-color="#022c22" />
+                                    </linearGradient>
+                                    <radialGradient id="maskFade" cx="50%" cy="50%" r="50%">
+                                        <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+                                        <stop offset="70%" stop-color="#ffffff" stop-opacity="0.4" />
+                                        <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                                    </radialGradient>
+                                </defs>
+                                <!-- Background Image / Forest -->
+                                <rect width="500" height="300" fill="url(#forestGrad)" />
+                                <circle cx="100" cy="80" r="40" fill="#fef08a" opacity="0.3" />
+                                <path d="M 0 300 L 80 180 L 160 300 Z M 120 300 L 220 150 L 320 300 Z M 280 300 L 380 170 L 480 300 Z" fill="#042f2e" opacity="0.8"/>
+                                <!-- Blended Portrait Center -->
+                                <g opacity="0.85">
+                                    <circle cx="250" cy="120" r="55" fill="#fde047" opacity="0.2"/>
+                                    <!-- Silhouette with Soft Mask Edge -->
+                                    <path d="M 250 80 C 230 80 215 95 215 115 C 215 130 225 142 238 147 C 205 160 185 190 185 230 L 315 230 C 315 190 295 160 262 147 C 275 142 285 130 285 115 C 285 95 270 80 250 80 Z" fill="#fbbf24" />
+                                </g>
+                                <!-- Overlay Stars/Magic Light -->
+                                <circle cx="200" cy="100" r="2" fill="#fff"/>
+                                <circle cx="290" cy="90" r="3" fill="#fff"/>
+                                <circle cx="170" cy="160" r="2" fill="#fff"/>
+                                <circle cx="330" cy="150" r="2.5" fill="#fff"/>
+                            </svg>
+                            <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-xl text-xs font-bold border border-white/10">
+                                ✨ מעבר רך ושקוף בין הפורטרט לטבע בעזרת מברשת שחורה
+                            </div>
+                        </div>
+                        <p class="text-xs text-stone-600 font-semibold leading-relaxed">
+                            <strong>הסבר תוצר:</strong> התמונה העליונה נחשפת רק במרכז ברכות, בעוד השוליים שלה מתמזגים בצורה חלקה וטבעית עם הרקע שמתחתיה. אין קווים חדים!
+                        </p>
+                    </div>
 
                     <!-- Steps List -->
                     <div class="space-y-3">
@@ -256,6 +316,44 @@
                         במשימה הזו ניצור פוסטר ססגוני ומקצועי בסגנון שנות ה-80. נלמד להשתמש ב<strong>כלי מעבר הצבעים (Gradient Tool)</strong> כדי לייצר רקעים וצורות עם עומק ויזואלי מהפנט.
                     </p>
 
+                    <!-- Visual Output Target Card -->
+                    <div class="bg-emerald-50/40 border-2 border-dashed border-emerald-300 rounded-3xl p-5 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-black uppercase tracking-wider text-emerald-800 bg-emerald-200/80 px-3 py-1 rounded-full">🎯 ככה זה אמור להיראות בסוף!</span>
+                            <span class="text-xs font-semibold text-stone-500">תוצר מצופה - משימה 2</span>
+                        </div>
+                        <div class="relative rounded-2xl overflow-hidden h-64 flex items-center justify-center text-white shadow-inner group">
+                            <!-- SVG Visual Representation of Retro Poster Gradient -->
+                            <svg class="w-full h-full absolute inset-0" viewBox="0 0 500 300" preserveAspectRatio="xMidYMid slice">
+                                <defs>
+                                    <linearGradient id="retroBg" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#4c1d95" />
+                                        <stop offset="50%" stop-color="#db2777" />
+                                        <stop offset="100%" stop-color="#f59e0b" />
+                                    </linearGradient>
+                                    <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
+                                        <stop offset="0%" stop-color="#06b6d4" />
+                                        <stop offset="100%" stop-color="#10b981" />
+                                    </radialGradient>
+                                </defs>
+                                <rect width="500" height="300" fill="url(#retroBg)" />
+                                <!-- Synthwave Radial Sun -->
+                                <circle cx="250" cy="160" r="65" fill="url(#sunGrad)" />
+                                <!-- Perspective Grid lines -->
+                                <path d="M 0 250 L 500 250 M 0 270 L 500 270 M 0 285 L 500 285" stroke="#f472b6" stroke-width="1.5" opacity="0.6"/>
+                                <path d="M 100 300 L 220 230 M 200 300 L 240 230 M 300 300 L 260 230 M 400 300 L 280 230" stroke="#f472b6" stroke-width="1.5" opacity="0.6"/>
+                                <!-- Overlay Retro Text with Blend Mode feel -->
+                                <text x="250" y="90" text-anchor="middle" font-family="'Heebo', sans-serif" font-weight="900" font-size="48" fill="#ffffff" opacity="0.9" letter-spacing="6">RETRO</text>
+                            </svg>
+                            <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-xl text-xs font-bold border border-white/10">
+                                🌅 פוסטר רטרו עם רקע גרדיאנט קווי ושמש היקפית
+                            </div>
+                        </div>
+                        <p class="text-xs text-stone-600 font-semibold leading-relaxed">
+                            <strong>הסבר תוצר:</strong> מעבר צבע קווי עשיר ברקע (סגול-ורוד-כתום), שמש מרכזית עם גרדיאנט מעגלי (Radial) וטקסט מעוצב שמתמזג בערבוב שכבות.
+                        </p>
+                    </div>
+
                     <!-- Steps List -->
                     <div class="space-y-3">
                         <h4 class="font-black text-stone-900 text-sm uppercase tracking-wide border-b border-stone-100 pb-2">שלבי המשימה:</h4>
@@ -329,6 +427,40 @@
                         במשימה הזו ניצור אשליה אופטית מדהימה שבה נראה שחלק מתמונה (למשל, ראש של דינוזאור, כדורגל או יד מושטת) פורץ ויוצא החוצה מתוך שכבת הטקסט שנמצאת מאחוריו.
                     </p>
 
+                    <!-- Visual Output Target Card -->
+                    <div class="bg-blue-50/40 border-2 border-dashed border-blue-300 rounded-3xl p-5 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-black uppercase tracking-wider text-blue-800 bg-blue-200/80 px-3 py-1 rounded-full">🎯 ככה זה אמור להיראות בסוף!</span>
+                            <span class="text-xs font-semibold text-stone-500">תוצר מצופה - משימה 3</span>
+                        </div>
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-900 h-64 flex items-center justify-center text-white shadow-inner group">
+                            <!-- SVG Visual Representation of Layer Pop-Out Effect -->
+                            <svg class="w-full h-full absolute inset-0" viewBox="0 0 500 300" preserveAspectRatio="xMidYMid slice">
+                                <rect width="500" height="300" fill="#0f172a" />
+                                <circle cx="250" cy="150" r="110" fill="#1e293b" />
+                                <!-- Background Text Layer (Middle layer) -->
+                                <text x="250" y="175" text-anchor="middle" font-family="'Heebo', sans-serif" font-weight="900" font-size="95" fill="#38bdf8" opacity="0.9">POWER</text>
+                                <!-- Character overlapping back and popping out in front -->
+                                <g>
+                                    <!-- Body (Behind Text Visual Effect) -->
+                                    <path d="M 210 280 C 210 210 230 180 250 180 C 270 180 290 210 290 280 Z" fill="#f59e0b" opacity="0.7"/>
+                                    <!-- Head Popping OUT IN FRONT OF TEXT -->
+                                    <circle cx="250" cy="125" r="45" fill="#fbbf24" />
+                                    <!-- Raised Arm popping over text -->
+                                    <path d="M 285 140 Q 340 100 360 70 Q 370 85 320 155 Z" fill="#f59e0b" />
+                                    <!-- Crown / Pop Highlight -->
+                                    <path d="M 230 85 L 240 65 L 250 80 L 260 65 L 270 85 Z" fill="#ef4444" />
+                                </g>
+                            </svg>
+                            <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-xl text-xs font-bold border border-white/10">
+                                💥 הראש והיד פורצים קדימה מעל שכבת הטקסט!
+                            </div>
+                        </div>
+                        <p class="text-xs text-stone-600 font-semibold leading-relaxed">
+                            <strong>הסבר תוצר:</strong> הדמות נמצאת בשתי שכבות - החלק התחתון מוסתר מאחורי המילה "POWER", בעוד הראש והיד העליונים מופיעים קדימה ומייצרים תחושת תלת-ממד!
+                        </p>
+                    </div>
+
                     <!-- Steps List -->
                     <div class="space-y-3">
                         <h4 class="font-black text-stone-900 text-sm uppercase tracking-wide border-b border-stone-100 pb-2">שלבי המשימה:</h4>
@@ -401,6 +533,51 @@
                     <p class="text-stone-700 font-semibold leading-relaxed">
                         ניקח תמונה רגילה של חפץ פשוט או פורטרט עצמי ונהפוך אותה ליצירת אמנות קלאסית בסגנון "פופ-ארט" (משחק קונטרסטים חזק ושינויי צבעים קיצוניים).
                     </p>
+
+                    <!-- Visual Output Target Card -->
+                    <div class="bg-teal-50/40 border-2 border-dashed border-teal-300 rounded-3xl p-5 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-black uppercase tracking-wider text-teal-800 bg-teal-200/80 px-3 py-1 rounded-full">🎯 ככה זה אמור להיראות בסוף!</span>
+                            <span class="text-xs font-semibold text-stone-500">תוצר מצופה - אתגר פופ-ארט</span>
+                        </div>
+                        <div class="relative rounded-2xl overflow-hidden bg-stone-900 h-64 grid grid-cols-2 grid-rows-2 gap-1 p-1 shadow-inner group">
+                            <!-- SVG Pop Art Grid (2x2 Quad) -->
+                            <!-- Quad 1: Pink / Yellow -->
+                            <div class="relative bg-pink-500 flex items-center justify-center overflow-hidden">
+                                <svg class="w-24 h-24" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="35" fill="#facc15"/>
+                                    <path d="M 35 40 Q 50 20 65 40 Q 50 85 35 40 Z" fill="#000000"/>
+                                </svg>
+                            </div>
+                            <!-- Quad 2: Cyan / Red -->
+                            <div class="relative bg-cyan-400 flex items-center justify-center overflow-hidden">
+                                <svg class="w-24 h-24" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="35" fill="#ef4444"/>
+                                    <path d="M 35 40 Q 50 20 65 40 Q 50 85 35 40 Z" fill="#000000"/>
+                                </svg>
+                            </div>
+                            <!-- Quad 3: Yellow / Purple -->
+                            <div class="relative bg-yellow-400 flex items-center justify-center overflow-hidden">
+                                <svg class="w-24 h-24" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="35" fill="#a855f7"/>
+                                    <path d="M 35 40 Q 50 20 65 40 Q 50 85 35 40 Z" fill="#000000"/>
+                                </svg>
+                            </div>
+                            <!-- Quad 4: Green / Orange -->
+                            <div class="relative bg-emerald-400 flex items-center justify-center overflow-hidden">
+                                <svg class="w-24 h-24" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="35" fill="#f97316"/>
+                                    <path d="M 35 40 Q 50 20 65 40 Q 50 85 35 40 Z" fill="#000000"/>
+                                </svg>
+                            </div>
+                            <div class="absolute bottom-3 right-3 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-xl text-xs font-bold text-white border border-white/10">
+                                🎨 קונטרסט שחור-לבן (Threshold) בשילוב צבעים פסיכדליים
+                            </div>
+                        </div>
+                        <p class="text-xs text-stone-600 font-semibold leading-relaxed">
+                            <strong>הסבר תוצר:</strong> התמונה הופכת לצללית קונטרסטית שחורה עם שיטת Multiply, כשמתחתיה שכבת צבעים תוססת הממלאת את החלקים הריקים בסטייל וורהול קלאסי.
+                        </p>
+                    </div>
 
                     <!-- Steps List -->
                     <div class="space-y-3">
